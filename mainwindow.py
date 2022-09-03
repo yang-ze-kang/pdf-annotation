@@ -360,7 +360,7 @@ class Windows(QWidget):
                 return
             if not self.task.need_label_ids:
                 self.task.need_label_ids = list(
-                    sorted(self.pdfs_id2path.keys()))[:10]
+                    sorted(self.pdfs_id2path.keys()))
                 self.task.start_idx = 1
                 self.task.end_idx = len(self.task.need_label_ids)
 
