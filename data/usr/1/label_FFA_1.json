@@ -1,0 +1,1346 @@
+[
+ {
+  "id": 1,
+  "pdf_name": "1_0133_FFA_20211009153220.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 1.0003936290740967
+ },
+ {
+  "id": 2,
+  "pdf_name": "2_0670_FFA_20220218144806.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 3,
+  "pdf_name": "3_0670_FFA_20220524120858.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 4,
+  "pdf_name": "4_0076_FFA_20211201162958.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 5,
+  "pdf_name": "5_0628_FFA_20210927103940.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 6,
+  "pdf_name": "6_1055_FFA_20220120142944.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 7,
+  "pdf_name": "7_0964_FFA_20220204145405.pdf",
+  "is_labeled": 1,
+  "label": "不确定",
+  "labeled_time": 0
+ },
+ {
+  "id": 8,
+  "pdf_name": "8_0958_FFA_20210630142539.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 9,
+  "pdf_name": "9_0228_FFA_20210628155326.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 10,
+  "pdf_name": "10_0552_FFA_20220124144524.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 11,
+  "pdf_name": "11_0172_FFA_20211223165610.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 12,
+  "pdf_name": "12_0060_FFA_20220517170348.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 13,
+  "pdf_name": "13_1139_FFA_20211222164917.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 14,
+  "pdf_name": "14_0072_FFA_20220215143644.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 15,
+  "pdf_name": "15_0712_FFA_20220421152343.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 16,
+  "pdf_name": "16_0754_FFA_20220422101240.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 17,
+  "pdf_name": "17_0818_FFA_20220416105746.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 18,
+  "pdf_name": "18_0928_FFA_20220422145640.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 19,
+  "pdf_name": "19_0331_FFA_20211019142436.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 1.0139753818511963
+ },
+ {
+  "id": 20,
+  "pdf_name": "20_0145_FFA_20211129172457.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 1.008969783782959
+ },
+ {
+  "id": 21,
+  "pdf_name": "21_1008_FFA_20210720105157.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 22,
+  "pdf_name": "22_0806_FFA_20220613094734.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 3.0019359588623047
+ },
+ {
+  "id": 23,
+  "pdf_name": "23_1199_FFA_20210903162135.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 3.009199619293213
+ },
+ {
+  "id": 24,
+  "pdf_name": "24_0704_FFA_20220531142937.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 25,
+  "pdf_name": "25_0493_FFA_20210720155001.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 26,
+  "pdf_name": "26_0725_FFA_20210802103525.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 1.0011000633239746
+ },
+ {
+  "id": 27,
+  "pdf_name": "27_0226_FFA_20220314103455.pdf",
+  "is_labeled": 1,
+  "label": "不确定",
+  "labeled_time": 0
+ },
+ {
+  "id": 28,
+  "pdf_name": "28_0160_FFA_20220129160344.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 29,
+  "pdf_name": "29_0535_FFA_20210712112902.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 30,
+  "pdf_name": "30_0694_FFA_20220330153607.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 31,
+  "pdf_name": "31_1019_FFA_20211115120052.pdf",
+  "is_labeled": 1,
+  "label": "不确定",
+  "labeled_time": 0
+ },
+ {
+  "id": 32,
+  "pdf_name": "32_0658_FFA_20220117105320.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 626.3854579925537
+ },
+ {
+  "id": 33,
+  "pdf_name": "33_0658_FFA_20211115093933.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 2.0019371509552
+ },
+ {
+  "id": 34,
+  "pdf_name": "34_0658_FFA_20220120085610.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 35,
+  "pdf_name": "35_0658_FFA_20211013145127.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 36,
+  "pdf_name": "36_0823_FFA_20220516150731.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 37,
+  "pdf_name": "37_0823_FFA_20220516150328.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 38,
+  "pdf_name": "38_0238_FFA_20210702144130.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 39,
+  "pdf_name": "39_0378_FFA_20210726120058.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 40,
+  "pdf_name": "40_0179_FFA_20210921092857.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 2.0016331672668457
+ },
+ {
+  "id": 41,
+  "pdf_name": "41_0280_FFA_20211213144713.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 1.0016026496887207
+ },
+ {
+  "id": 42,
+  "pdf_name": "42_1191_FFA_20220413100604.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 1.0006215572357178
+ },
+ {
+  "id": 43,
+  "pdf_name": "43_1191_FFA_20220413100521.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 44,
+  "pdf_name": "44_0724_FFA_20220125160448.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 45,
+  "pdf_name": "45_1167_FFA_20220429135846.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 46,
+  "pdf_name": "46_0196_FFA_20220404154256.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 47,
+  "pdf_name": "47_1030_FFA_20220426102117.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 48,
+  "pdf_name": "48_1030_FFA_20220426101943.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 49,
+  "pdf_name": "49_0673_FFA_20220326150856.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 50,
+  "pdf_name": "50_0673_FFA_20210930113157.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 51,
+  "pdf_name": "51_0581_FFA_20220511105419.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 52,
+  "pdf_name": "52_0581_FFA_20220512093558.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 53,
+  "pdf_name": "53_0581_FFA_20220511103640.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 54,
+  "pdf_name": "54_0657_FFA_20210830093450.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 55,
+  "pdf_name": "55_0657_FFA_20210830093358.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 56,
+  "pdf_name": "56_1163_FFA_20210817143524.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 57,
+  "pdf_name": "57_0578_FFA_20220411150800.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 58,
+  "pdf_name": "58_1062_FFA_20220516145946.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 59,
+  "pdf_name": "59_0419_FFA_20220215091929.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 1.0003588199615479
+ },
+ {
+  "id": 60,
+  "pdf_name": "60_0610_FFA_20220310111051.pdf",
+  "is_labeled": 1,
+  "label": "不确定",
+  "labeled_time": 2.001115560531616
+ },
+ {
+  "id": 61,
+  "pdf_name": "61_0222_FFA_20220215153648.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 1.0010638236999512
+ },
+ {
+  "id": 62,
+  "pdf_name": "62_0768_FFA_20210923110724.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 63,
+  "pdf_name": "63_0119_FFA_20210816163303.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 64,
+  "pdf_name": "64_0001_FFA_20211214152052.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 65,
+  "pdf_name": "65_0696_FFA_20210906112835.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 66,
+  "pdf_name": "66_0526_FFA_20220530164218.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 67,
+  "pdf_name": "67_0526_FFA_20220530163150.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 68,
+  "pdf_name": "68_0084_FFA_20220331115046.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 69,
+  "pdf_name": "69_0440_FFA_20210706095715.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 70,
+  "pdf_name": "70_0395_FFA_20220531113137.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 71,
+  "pdf_name": "71_0085_FFA_20211006163836.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 72,
+  "pdf_name": "72_0954_FFA_20210909084540.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 73,
+  "pdf_name": "73_0954_FFA_20210908143944.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 1.0009751319885254
+ },
+ {
+  "id": 74,
+  "pdf_name": "74_0291_FFA_20210930092207.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 1.0009071826934814
+ },
+ {
+  "id": 75,
+  "pdf_name": "75_0002_FFA_20210730102521.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 76,
+  "pdf_name": "76_0056_FFA_20220418142825.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 77,
+  "pdf_name": "77_1080_FFA_20220406112727.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 78,
+  "pdf_name": "78_1045_FFA_20220607150356.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 79,
+  "pdf_name": "79_1085_FFA_20220509111026.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 1.0001983642578125
+ },
+ {
+  "id": 80,
+  "pdf_name": "80_0600_FFA_20220220115934.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 9.074469566345215
+ },
+ {
+  "id": 81,
+  "pdf_name": "81_0134_FFA_20210823111741.pdf",
+  "is_labeled": 1,
+  "label": "不确定",
+  "labeled_time": 3.0053391456604004
+ },
+ {
+  "id": 82,
+  "pdf_name": "82_1112_FFA_20210726105856.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 83,
+  "pdf_name": "83_1132_FFA_20220316152502.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 84,
+  "pdf_name": "84_0734_FFA_20220509160040.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 85,
+  "pdf_name": "85_0306_FFA_20220302153850.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 86,
+  "pdf_name": "86_0758_FFA_20220419143302.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 87,
+  "pdf_name": "87_0295_FFA_20220112151652.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 88,
+  "pdf_name": "88_0239_FFA_20211018110322.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 89,
+  "pdf_name": "89_0098_FFA_20211011112716.pdf",
+  "is_labeled": 1,
+  "label": "不确定",
+  "labeled_time": 0
+ },
+ {
+  "id": 90,
+  "pdf_name": "90_0663_FFA_20210708093308.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 91,
+  "pdf_name": "91_0876_FFA_20220328162301.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 3.020895481109619
+ },
+ {
+  "id": 92,
+  "pdf_name": "92_0876_FFA_20220328161322.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 93,
+  "pdf_name": "93_1261_FFA_20220419145823.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 94,
+  "pdf_name": "94_0896_FFA_20210907110828.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 95,
+  "pdf_name": "95_0503_FFA_20211202155821.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 96,
+  "pdf_name": "96_0652_FFA_20211006094719.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 1.0008609294891357
+ },
+ {
+  "id": 97,
+  "pdf_name": "97_0432_FFA_20220124165430.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 98,
+  "pdf_name": "98_0356_FFA_20211104154008.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 99,
+  "pdf_name": "99_0855_FFA_20210715100407.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 100,
+  "pdf_name": "100_0989_FFA_20220104162129.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 101,
+  "pdf_name": "101_0941_FFA_20220504105328.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 2.010141611099243
+ },
+ {
+  "id": 102,
+  "pdf_name": "102_0738_FFA_20210720145312.pdf",
+  "is_labeled": 1,
+  "label": "右眼AMD",
+  "labeled_time": 2.0047767162323
+ },
+ {
+  "id": 103,
+  "pdf_name": "103_0938_FFA_20220609140528.pdf",
+  "is_labeled": 1,
+  "label": "双眼AMD",
+  "labeled_time": 1.0007555484771729
+ },
+ {
+  "id": 104,
+  "pdf_name": "104_0177_FFA_20211201151436.pdf",
+  "is_labeled": 1,
+  "label": "非AMD",
+  "labeled_time": 0
+ },
+ {
+  "id": 105,
+  "pdf_name": "105_1059_FFA_20211222153247.pdf",
+  "is_labeled": 1,
+  "label": "不确定",
+  "labeled_time": 0
+ },
+ {
+  "id": 106,
+  "pdf_name": "106_0292_FFA_20210701145905.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 107,
+  "pdf_name": "107_1172_FFA_20210712111751.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 108,
+  "pdf_name": "108_0814_FFA_20211227110518.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 109,
+  "pdf_name": "109_1088_FFA_20220426151641.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 110,
+  "pdf_name": "110_0713_FFA_20211211145715.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 111,
+  "pdf_name": "111_0930_FFA_20220302160137.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 112,
+  "pdf_name": "112_0193_FFA_20210629102558.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 113,
+  "pdf_name": "113_1150_FFA_20220415145134.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 114,
+  "pdf_name": "114_0691_FFA_20210906145338.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 115,
+  "pdf_name": "115_0881_FFA_20220211103022.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 116,
+  "pdf_name": "116_0717_FFA_20210817091715.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 117,
+  "pdf_name": "117_1204_FFA_20211130144601.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 118,
+  "pdf_name": "118_0858_FFA_20211119155216.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 119,
+  "pdf_name": "119_1219_FFA_20211220150133.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 120,
+  "pdf_name": "120_0785_FFA_20211118153227.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 121,
+  "pdf_name": "121_0785_FFA_20211118175042.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 122,
+  "pdf_name": "122_0749_FFA_20220523110831.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 123,
+  "pdf_name": "123_1005_FFA_20220310095953.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 124,
+  "pdf_name": "124_1005_FFA_20220310100154.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 125,
+  "pdf_name": "125_0824_FFA_20220519150318.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 126,
+  "pdf_name": "126_0405_FFA_20211108112640.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 127,
+  "pdf_name": "127_0275_FFA_20220329153419.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 128,
+  "pdf_name": "128_1082_FFA_20220208155856.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 129,
+  "pdf_name": "129_0660_FFA_20220604171432.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 130,
+  "pdf_name": "130_0603_FFA_20220523143410.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 131,
+  "pdf_name": "131_0714_FFA_20220228093512.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 132,
+  "pdf_name": "132_0006_FFA_20210809144043.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 133,
+  "pdf_name": "133_0981_FFA_20210816133547.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 134,
+  "pdf_name": "134_0019_FFA_20220308100424.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 135,
+  "pdf_name": "135_0536_FFA_20220204142309.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 136,
+  "pdf_name": "136_0641_FFA_20220103103629.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 137,
+  "pdf_name": "137_0821_FFA_20220620150836.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 138,
+  "pdf_name": "138_0630_FFA_20220601105512.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 139,
+  "pdf_name": "139_0168_FFA_20220126095155.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 140,
+  "pdf_name": "140_0672_FFA_20220506164546.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 141,
+  "pdf_name": "141_0911_FFA_20220317121644.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 142,
+  "pdf_name": "142_0379_FFA_20220214094247.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 143,
+  "pdf_name": "143_0379_FFA_20220214102609.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 144,
+  "pdf_name": "144_0350_FFA_20220428111241.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 145,
+  "pdf_name": "145_0350_FFA_20220421115417.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 146,
+  "pdf_name": "146_0350_FFA_20220413144701.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 147,
+  "pdf_name": "147_0350_FFA_20220413144913.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 148,
+  "pdf_name": "148_0443_FFA_20211004141530.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 149,
+  "pdf_name": "149_0278_FFA_20220214111015.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 150,
+  "pdf_name": "150_0567_FFA_20220606171505.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 151,
+  "pdf_name": "151_0180_FFA_20210830102556.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 152,
+  "pdf_name": "152_0269_FFA_20211203154240.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 153,
+  "pdf_name": "153_0269_FFA_20211203100828.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 154,
+  "pdf_name": "154_0997_FFA_20220511152716.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 155,
+  "pdf_name": "155_0139_FFA_20211108172729.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 156,
+  "pdf_name": "156_1178_FFA_20220318151030.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 157,
+  "pdf_name": "157_1054_FFA_20210705092216.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 158,
+  "pdf_name": "158_1106_FFA_20220301150439.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 159,
+  "pdf_name": "159_0921_FFA_20220307101911.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 160,
+  "pdf_name": "160_0932_FFA_20210913160331.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 161,
+  "pdf_name": "161_0107_FFA_20220530113915.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 162,
+  "pdf_name": "162_0040_FFA_20210909172358.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 163,
+  "pdf_name": "163_0608_FFA_20220521164958.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 164,
+  "pdf_name": "164_0248_FFA_20220606143526.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 165,
+  "pdf_name": "165_0149_FFA_20211011155923.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 166,
+  "pdf_name": "166_0963_FFA_20220307144058.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 167,
+  "pdf_name": "167_0573_FFA_20220214104926.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 168,
+  "pdf_name": "168_0669_FFA_20211101163849.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 169,
+  "pdf_name": "169_0688_FFA_20211022142445.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 170,
+  "pdf_name": "170_0919_FFA_20220317092604.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 171,
+  "pdf_name": "171_1046_FFA_20210914135954.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 172,
+  "pdf_name": "172_0847_FFA_20210705113738.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 173,
+  "pdf_name": "173_0847_FFA_20210705144702.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 174,
+  "pdf_name": "174_0240_FFA_20210920115128.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 175,
+  "pdf_name": "175_0242_FFA_20220613161417.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 176,
+  "pdf_name": "176_0027_FFA_20210923185201.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 177,
+  "pdf_name": "177_0027_FFA_20210923154837.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 178,
+  "pdf_name": "178_0051_FFA_20220215095620.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 179,
+  "pdf_name": "179_0690_FFA_20220605144621.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 180,
+  "pdf_name": "180_0433_FFA_20211207162726.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 181,
+  "pdf_name": "181_0710_FFA_20220401172205.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 182,
+  "pdf_name": "182_0645_FFA_20220224104311.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 183,
+  "pdf_name": "183_0497_FFA_20211206120936.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 184,
+  "pdf_name": "184_0409_FFA_20220328150957.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 185,
+  "pdf_name": "185_1012_FFA_20211006150837.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 186,
+  "pdf_name": "186_1201_FFA_20211111143205.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 187,
+  "pdf_name": "187_0079_FFA_20211027150052.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 188,
+  "pdf_name": "188_0037_FFA_20211206091909.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 189,
+  "pdf_name": "189_0403_FFA_20210628091316.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 190,
+  "pdf_name": "190_0090_FFA_20210906091452.pdf",
+  "is_labeled": 0,
+  "label": "",
+  "labeled_time": ""
+ },
+ {
+  "id": 191,
+  "pdf_name": "191_0358_FFA_20220304111540.pdf",
+  "is_labeled": 1,
+  "label": "不确定",
+  "labeled_time": 1.0009562969207764
+ },
+ {
+  "id": 192,
+  "pdf_name": "192_0430_FFA_20220610093839.pdf",
+  "is_labeled": 1,
+  "label": "左眼AMD",
+  "labeled_time": 2.015848398208618
+ }
+]

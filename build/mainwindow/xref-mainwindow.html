@@ -18,8 +18,7 @@
   <a target="code" href="///E:/ict/%E7%88%B1%E5%B0%94%E7%9C%BC%E7%A7%91/pdf%E6%A0%87%E6%B3%A8%E8%BD%AF%E4%BB%B6/mainwindow.py" type="text/plain"><tt>mainwindow.py</tt></a>
 <span class="moduletype">Script</span>  <div class="import">
 imports:
-    <a href="#PdfReader">PdfReader</a>
- &#8226;   <a href="#PyQt5">PyQt5</a>
+    <a href="#PyQt5">PyQt5</a>
  &#8226;   <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
  &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
  &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
@@ -27,6 +26,8 @@ imports:
  &#8226;   <a href="#_collections_abc">_collections_abc</a>
  &#8226;   <a href="#_weakrefset">_weakrefset</a>
  &#8226;   <a href="#abc">abc</a>
+ &#8226;   <a href="#asyncio">asyncio</a>
+ &#8226;   <a href="#asyncio.tasks">asyncio.tasks</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#collections.abc">collections.abc</a>
@@ -183,7 +184,8 @@ imports:
  &#8226;   <a href="#tokenize">tokenize</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#types">types</a>
- &#8226;   <a href="#utils">utils</a>
+ &#8226;   <a href="#ui.PdfReader">ui.PdfReader</a>
+ &#8226;   <a href="#ui.utils">ui.utils</a>
  &#8226;   <a href="#warnings">warnings</a>
  &#8226;   <a href="#weakref">weakref</a>
 
@@ -352,23 +354,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="MySlider"></a>
-  <a target="code" href="///E:/ict/%E7%88%B1%E5%B0%94%E7%9C%BC%E7%A7%91/pdf%E6%A0%87%E6%B3%A8%E8%BD%AF%E4%BB%B6/MySlider.py" type="text/plain"><tt>MySlider</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
- &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#PdfReader">PdfReader</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="PIL"></a>
   <a target="code" href="" type="text/plain"><tt>PIL</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -376,28 +361,6 @@ imported by:
     <a href="#PyInstaller.building.icon">PyInstaller.building.icon</a>
  &#8226;   <a href="#PyInstaller.building.splash">PyInstaller.building.splash</a>
  &#8226;   <a href="#fitz.fitz">fitz.fitz</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="PdfReader"></a>
-  <a target="code" href="///E:/ict/%E7%88%B1%E5%B0%94%E7%9C%BC%E7%A7%91/pdf%E6%A0%87%E6%B3%A8%E8%BD%AF%E4%BB%B6/PdfReader.py" type="text/plain"><tt>PdfReader</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#MySlider">MySlider</a>
- &#8226;   <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
- &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
- &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
- &#8226;   <a href="#fitz">fitz</a>
- &#8226;   <a href="#sys">sys</a>
- &#8226;   <a href="#utils">utils</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#mainwindow.py">mainwindow.py</a>
 
   </div>
 
@@ -436,12 +399,12 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#MySlider">MySlider</a>
- &#8226;   <a href="#PdfReader">PdfReader</a>
- &#8226;   <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
+    <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
  &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
  &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
  &#8226;   <a href="#mainwindow.py">mainwindow.py</a>
+ &#8226;   <a href="#ui.MySlider">ui.MySlider</a>
+ &#8226;   <a href="#ui.PdfReader">ui.PdfReader</a>
 
   </div>
 
@@ -458,10 +421,10 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#PdfReader">PdfReader</a>
- &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
+    <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
  &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
  &#8226;   <a href="#mainwindow.py">mainwindow.py</a>
+ &#8226;   <a href="#ui.PdfReader">ui.PdfReader</a>
 
   </div>
 
@@ -479,10 +442,10 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#MySlider">MySlider</a>
- &#8226;   <a href="#PdfReader">PdfReader</a>
- &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
+    <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
  &#8226;   <a href="#mainwindow.py">mainwindow.py</a>
+ &#8226;   <a href="#ui.MySlider">ui.MySlider</a>
+ &#8226;   <a href="#ui.PdfReader">ui.PdfReader</a>
 
   </div>
 
@@ -1727,6 +1690,7 @@ imported by:
  &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
  &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
  &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
+ &#8226;   <a href="#mainwindow.py">mainwindow.py</a>
  &#8226;   <a href="#unittest.async_case">unittest.async_case</a>
 
   </div>
@@ -2361,6 +2325,7 @@ imported by:
  &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
  &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
  &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
+ &#8226;   <a href="#mainwindow.py">mainwindow.py</a>
 
   </div>
 
@@ -3013,10 +2978,10 @@ imported by:
  &#8226;   <a href="#tokenize">tokenize</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#ui.utils">ui.utils</a>
  &#8226;   <a href="#unittest.case">unittest.case</a>
  &#8226;   <a href="#unittest.util">unittest.util</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
- &#8226;   <a href="#utils">utils</a>
  &#8226;   <a href="#xml.etree.ElementTree">xml.etree.ElementTree</a>
 
   </div>
@@ -6786,12 +6751,12 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#PdfReader">PdfReader</a>
- &#8226;   <a href="#fitz">fitz</a>
+    <a href="#fitz">fitz</a>
  &#8226;   <a href="#fitz._fitz">fitz._fitz</a>
  &#8226;   <a href="#fitz.fitz">fitz.fitz</a>
  &#8226;   <a href="#fitz.utils">fitz.utils</a>
- &#8226;   <a href="#utils">utils</a>
+ &#8226;   <a href="#ui.PdfReader">ui.PdfReader</a>
+ &#8226;   <a href="#ui.utils">ui.utils</a>
 
   </div>
 
@@ -15540,7 +15505,7 @@ imported by:
     <a href="#sqlite3">sqlite3</a>
  &#8226;   <a href="#sqlite3.dbapi2">sqlite3.dbapi2</a>
  &#8226;   <a href="#sqlite3.dump">sqlite3.dump</a>
- &#8226;   <a href="#utils">utils</a>
+ &#8226;   <a href="#ui.utils">ui.utils</a>
 
   </div>
 
@@ -15893,8 +15858,7 @@ imported by:
   <a name="sys"></a>
   <tt>sys</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
-    <a href="#PdfReader">PdfReader</a>
- &#8226;   <a href="#PyInstaller">PyInstaller</a>
+    <a href="#PyInstaller">PyInstaller</a>
  &#8226;   <a href="#PyInstaller.archive.writers">PyInstaller.archive.writers</a>
  &#8226;   <a href="#PyInstaller.building.build_main">PyInstaller.building.build_main</a>
  &#8226;   <a href="#PyInstaller.building.makespec">PyInstaller.building.makespec</a>
@@ -16156,6 +16120,7 @@ imported by:
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#ui.PdfReader">ui.PdfReader</a>
  &#8226;   <a href="#unittest.case">unittest.case</a>
  &#8226;   <a href="#unittest.loader">unittest.loader</a>
  &#8226;   <a href="#unittest.main">unittest.main</a>
@@ -16860,6 +16825,80 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="ui"></a>
+  <a target="code" href="///E:/ict/%E7%88%B1%E5%B0%94%E7%9C%BC%E7%A7%91/pdf%E6%A0%87%E6%B3%A8%E8%BD%AF%E4%BB%B6/ui/__init__.py" type="text/plain"><tt>ui</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imported by:
+    <a href="#ui.MySlider">ui.MySlider</a>
+ &#8226;   <a href="#ui.PdfReader">ui.PdfReader</a>
+ &#8226;   <a href="#ui.utils">ui.utils</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="ui.MySlider"></a>
+  <a target="code" href="///E:/ict/%E7%88%B1%E5%B0%94%E7%9C%BC%E7%A7%91/pdf%E6%A0%87%E6%B3%A8%E8%BD%AF%E4%BB%B6/ui/MySlider.py" type="text/plain"><tt>ui.MySlider</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
+ &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
+ &#8226;   <a href="#ui">ui</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#ui.PdfReader">ui.PdfReader</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="ui.PdfReader"></a>
+  <a target="code" href="///E:/ict/%E7%88%B1%E5%B0%94%E7%9C%BC%E7%A7%91/pdf%E6%A0%87%E6%B3%A8%E8%BD%AF%E4%BB%B6/ui/PdfReader.py" type="text/plain"><tt>ui.PdfReader</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyQt5.QtCore">PyQt5.QtCore</a>
+ &#8226;   <a href="#PyQt5.QtGui">PyQt5.QtGui</a>
+ &#8226;   <a href="#PyQt5.QtWidgets">PyQt5.QtWidgets</a>
+ &#8226;   <a href="#fitz">fitz</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#ui">ui</a>
+ &#8226;   <a href="#ui.MySlider">ui.MySlider</a>
+ &#8226;   <a href="#ui.utils">ui.utils</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mainwindow.py">mainwindow.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="ui.utils"></a>
+  <a target="code" href="///E:/ict/%E7%88%B1%E5%B0%94%E7%9C%BC%E7%A7%91/pdf%E6%A0%87%E6%B3%A8%E8%BD%AF%E4%BB%B6/ui/utils.py" type="text/plain"><tt>ui.utils</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#collections">collections</a>
+ &#8226;   <a href="#fitz">fitz</a>
+ &#8226;   <a href="#sqlite3">sqlite3</a>
+ &#8226;   <a href="#ui">ui</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#mainwindow.py">mainwindow.py</a>
+ &#8226;   <a href="#ui.PdfReader">ui.PdfReader</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="unicodedata"></a>
   <tt>unicodedata</tt> <span class="moduletype"><tt>d:\Anaconda3\envs\pyqt5\DLLs\unicodedata.pyd</tt></span>  <div class="import">
 imported by:
@@ -17283,25 +17322,6 @@ imports:
 imported by:
     <a href="#urllib.error">urllib.error</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="utils"></a>
-  <a target="code" href="///E:/ict/%E7%88%B1%E5%B0%94%E7%9C%BC%E7%A7%91/pdf%E6%A0%87%E6%B3%A8%E8%BD%AF%E4%BB%B6/utils.py" type="text/plain"><tt>utils</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#collections">collections</a>
- &#8226;   <a href="#fitz">fitz</a>
- &#8226;   <a href="#sqlite3">sqlite3</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#PdfReader">PdfReader</a>
- &#8226;   <a href="#mainwindow.py">mainwindow.py</a>
 
   </div>
 

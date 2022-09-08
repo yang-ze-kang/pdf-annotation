@@ -2,7 +2,7 @@ __pycache__
 *.pyc
 data/chongqing-onlyimage-pdfs
 pdf标注.zip
-pdf标注
-build/mainwindow
+build
 dist
+pdf标注
 z.ipynb

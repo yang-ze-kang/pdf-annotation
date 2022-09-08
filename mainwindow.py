@@ -1,3 +1,4 @@
+from asyncio import tasks
 import os
 import time
 from tkinter.tix import Tree
@@ -7,10 +8,10 @@ import pickle
 from PyQt5.QtWidgets import (QPushButton, QGroupBox, QLineEdit, QListWidget, QShortcut,
                              QLabel, QFileDialog, QScrollArea, QSpacerItem, QHBoxLayout,
                              QWidget, QMessageBox, QRadioButton, QButtonGroup, QVBoxLayout,
-                             QLayout, QInputDialog, QMainWindow)
-from PyQt5.QtGui import QIcon, QPixmap, QImage, QPalette
+                             QLayout, QInputDialog, QMainWindow, QTextEdit)
+from PyQt5.QtGui import QIcon, QPixmap, QImage, QPalette,QIntValidator
 from PyQt5 import QtGui
-from PyQt5.QtWidgets import QApplication, QSizePolicy
+from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QThread, pyqtSignal, Qt, QSize, QRect, QPoint
 import sys
 from ui.PdfReader import PdfReader
@@ -131,15 +132,20 @@ class Windows(QWidget):
         self.size = Size(3.6, 3.6)
 
         vhox = QVBoxLayout()
+
+        vhox.addLayout(self.ui_a())  # 数据选择
+        vhox.addLayout(self.ui_b())  # 计时器
+        vhox.addLayout(self.ui_c())  # 序号显示和跳转区域
+
+        # 标注区域
         hbox = QHBoxLayout()
-        vhox_c_d = QVBoxLayout()
-        vhox_c_d.addLayout(self.ui_c())
-        vhox_c_d.addLayout(self.ui_e())
-        vhox_c_d.addLayout(self.ui_d())
-        hbox.addLayout(vhox_c_d)
-        vhox.addLayout(self.ui_a())
-        vhox.addLayout(self.ui_b())
+        hbox.addLayout(self.ui_d(), 5)  # pdf显示
+        vbox_e = QVBoxLayout()
+        vbox_e.addLayout(self.ui_e1())  # 选择标注
+        vbox_e.addLayout(self.ui_e2())  # 选择标注
+        hbox.addLayout(vbox_e, 1)
         vhox.addLayout(hbox)
+
         self.setLayout(vhox)
         self.input_name()
 
@@ -209,9 +215,32 @@ class Windows(QWidget):
         """
         患者编号区域
         """
+        def goPdf():
+            num = int(self.editGo.text())
+            if num < 1 or num > self.task.end_idx:
+                QMessageBox.critical(self, "错误", "请输入正确的pdf序号",
+                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
+                return
+            else:
+                self.task.current_idx = num
+                self.set_test()
+            
         self.qlabel_patient_id_label = QLabel("患者编号?-?, 当前患者编号:?", self)
         hbox = QHBoxLayout()
         hbox.addWidget(self.qlabel_patient_id_label)
+        self.editGo = QLineEdit()
+        self.editGo.setMaximumWidth(60)
+        # self.editGo.setPlaceholderText()
+        intValidator = QIntValidator(self)
+        intValidator.setRange(1,99)
+        self.editGo.setValidator(intValidator)
+        self.btnGo = QPushButton("跳转")
+        self.btnGo.clicked.connect(goPdf)
+        hbox.addStretch()
+        hbox.addWidget(self.editGo)
+        hbox.addWidget(self.btnGo)
+        self.editGo.setEnabled(False)
+        self.btnGo.setEnabled(False)
         return hbox
 
     def ui_d(self):
@@ -242,32 +271,21 @@ class Windows(QWidget):
             self.size.y -= 0.4
             self.set_page()
 
-    def ui_e0(self):
-        qlabel = QLabel('患者序列:')
-        self.squ_vbox = QVBoxLayout()
-
-        vbox = QVBoxLayout()
-        vbox.addWidget(qlabel)
-        vbox.addLayout(self.squ_vbox)
-        vbox.addStretch(1)
-
-        return vbox
-
-    def ui_e(self):
+    def ui_e1(self):
         """
-        选择区域
+        选择标注区域
         """
-        label_type = [line.strip('\n') for line in open(
+        self.label_type = [line.strip('\n') for line in open(
             'data/app/type_anno.txt', 'r', encoding='utf-8')]
-        self.qlabel_class = QLabel("标注类别:", self)
+        self.qlabel_class = QLabel("标注类别", self)
         self.class2qlabelId = {}
         self.qradio_class = []
-        for idx, item in enumerate(label_type):
+        for idx, item in enumerate(self.label_type):
             self.class2qlabelId[item] = idx
             self.qradio_class.append(QRadioButton('{}-{}'.format(idx+1, item)))
 
-        vbox_1 = QHBoxLayout()
-        vbox_1.addWidget(self.qlabel_class)
+        vbox_1 = QVBoxLayout()
+        vbox_1.addWidget(self.qlabel_class, alignment=Qt.AlignCenter)
         for index, item in enumerate(self.qradio_class):
             item.setShortcut(str(index+1))
             vbox_1.addWidget(item)
@@ -285,13 +303,43 @@ class Windows(QWidget):
             shorcut = QShortcut(seq, self.qbtn_next)
             shorcut.activated.connect(self.qbtn_next.animateClick)
 
-        vbox = QHBoxLayout()
+        vbox = QVBoxLayout()
         vbox.addLayout(vbox_1)
-        vbox.addStretch(1)
-        vbox.addWidget(self.qbtn_pre, 0, Qt.AlignRight)
-        vbox.addWidget(self.qbtn_next, 0, Qt.AlignRight)
-
+        hBox = QHBoxLayout()
+        hBox.addWidget(self.qbtn_pre)
+        hBox.addWidget(self.qbtn_next)
+        vbox.addLayout(hBox)
         return vbox
+
+    def ui_e2(self):
+        '''
+        标注统计显示区域
+        '''
+        # self.btnUpdateLabeled = QPushButton('显示标注情况')
+        # self.btnUpdateLabeled.clicked.connect(self.updateLabeledText)
+        self.labelShowLabeled = QLabel("标注情况")
+        self.textLabeled = QTextEdit()
+        self.textLabeled.setReadOnly(True)
+        vBox = QVBoxLayout()
+        # vBox.addWidget(self.btnUpdateLabeled)
+        vBox.addWidget(self.labelShowLabeled,alignment=Qt.AlignCenter)
+        vBox.addWidget(self.textLabeled)
+        return vBox
+
+    def updateLabeledText(self):
+        cls2ids = {cls: [] for cls in self.label_type}
+        cls2ids['未标注'] = []
+        for labeled_info in self.task.labeled_info:
+            if labeled_info['is_labeled']:
+                cls2ids[labeled_info['label']].append(labeled_info['id'])
+            else:
+                cls2ids['未标注'].append(labeled_info['id'])
+        txt = ""
+        for cls in cls2ids:
+            t = cls+":"+','.join([str(a) for a in cls2ids[cls]])+'\n'
+            txt = txt + t
+        self.textLabeled.setText(txt)
+        # self.btnUpdateLabeled.setText('更新标注情况')
 
     def input_name(self):
         value, ok = QInputDialog.getText(
@@ -322,7 +370,8 @@ class Windows(QWidget):
                 QMessageBox.critical(self, "错误", "请选择一个标注类型",
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
                 return
-
+            self.label_flag = self.LABELING
+            self.qbtn_start_label.setText("停止标注")
             # 创建task，管理标注顺序
             data_type_idx = np.argmax(data_type_list)
             data_type = self.qradio_data_type[data_type_idx].text().split(
@@ -348,12 +397,14 @@ class Windows(QWidget):
                 }for id in self.task.need_label_ids]
                 self.task.start_idx = 1
                 self.task.end_idx = len(self.task.need_label_ids)
-        if self.label_flag == self.UNLABELING:
-            self.label_flag = self.LABELING
-            self.qbtn_start_label.setText("停止标注")
             for btn in self.qradio_data_type:
                 btn.setEnabled(False)
             self.qbtn_next.setEnabled(True)
+            intValidator = QIntValidator(self)
+            intValidator.setRange(1,self.task.end_idx)
+            self.editGo.setValidator(intValidator)
+            self.editGo.setEnabled(True)
+            self.btnGo.setEnabled(True)
             self.set_test()
             self.check_pre_next()
         else:
@@ -363,6 +414,8 @@ class Windows(QWidget):
                 btn.setEnabled(True)
             self.qbtn_pre.setEnabled(False)
             self.qbtn_next.setEnabled(False)
+            self.editGo.setEnabled(False)
+            self.btnGo.setEnabled(False)
             self.end()
 
     def check_pre_next(self):
@@ -374,34 +427,22 @@ class Windows(QWidget):
             self.qbtn_next.setEnabled(True)
             self.qbtn_next.setText("下一个")
         else:
-            self.qbtn_next.setEnabled(True)
-            self.qbtn_next.setText("完成标注")
+            self.qbtn_next.setEnabled(False)
 
     def pre(self):
         # 上一个
         self.task.current_idx -= 1
         self.set_test()
-        self.check_pre_next()
 
     def next(self):
         # 下一个
         label_type_list = [btn.isChecked()
                            for btn in self.qradio_class]
-        if np.sum(label_type_list) == 0:
-            QMessageBox.critical(self, "错误", "请选择一个标注类型",
-                                 QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
-            return
-        self.save_current_test()
-        if self.task.current_idx == self.task.end_idx:
-            QMessageBox.information(self, "信息", "患者{}-{}标注完毕, 请收集保存目录下生成的【{}】".format(
-                self.task.start_idx, self.task.current_idx, self.task.json_path),
-                QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
-            self.qbtn_next.setEnabled(False)
-            return
+        if np.sum(label_type_list) != 0:
+            self.save_current_test()
         self.task.current_idx += 1
         self.set_test()
         self.qbtn_pre.setEnabled(True)
-        self.check_pre_next()
 
     def set_test(self):
         # 放置一个测试
@@ -427,6 +468,9 @@ class Windows(QWidget):
         else:
             self.qradio_class[self.class2qlabelId[self.task.get_current_label()]].setChecked(
                 True)
+        # 标注情况
+        self.updateLabeledText()
+        self.check_pre_next()
 
     def save_current_test(self):
         radio_btn_isCheck = [btn.isChecked() for btn in self.qradio_class]
