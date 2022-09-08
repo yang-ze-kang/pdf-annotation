@@ -1,17 +1,20 @@
 import os
 import time
+from tkinter.tix import Tree
 import numpy as np
 import json
 import pickle
-import fitz
-from PyQt5.QtWidgets import (QPushButton, QGroupBox, QLineEdit, QListWidget,
+from PyQt5.QtWidgets import (QPushButton, QGroupBox, QLineEdit, QListWidget, QShortcut,
                              QLabel, QFileDialog, QScrollArea, QSpacerItem, QHBoxLayout,
                              QWidget, QMessageBox, QRadioButton, QButtonGroup, QVBoxLayout,
-                             QLayout, QInputDialog)
+                             QLayout, QInputDialog, QMainWindow)
 from PyQt5.QtGui import QIcon, QPixmap, QImage, QPalette
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QSizePolicy
 from PyQt5.QtCore import QThread, pyqtSignal, Qt, QSize, QRect, QPoint
 import sys
+from ui.PdfReader import PdfReader
+from ui.utils import Size
 
 
 class MyTimer(QThread):
@@ -43,6 +46,7 @@ class Task(object):
         self.start_idx = 1
         self.end_idx = 0
         self.current_idx = 1
+        self.last_labeled_idx = 0
         self.usr_dir = usr_dir
         self.path = path
         self.label_type = label_type
@@ -52,6 +56,19 @@ class Task(object):
         self.labeled_info = []
         self.name = name
         self.load()
+
+    def get_current_label(self):
+        if self.labeled_info[self.current_idx-1]['is_labeled'] == 0:
+            return None
+        else:
+            return self.labeled_info[self.current_idx-1]['label']
+
+    def update_current_label(self, label, labeled_time):
+        # 更新一次标注
+        self.labeled_info[self.current_idx-1]['label'] = label
+        self.labeled_info[self.current_idx-1]['is_labeled'] = 1
+        self.labeled_info[self.current_idx-1]['labeled_time'] = labeled_time
+        self.save()
 
     def save(self):
         info = {
@@ -71,14 +88,13 @@ class Task(object):
         self.save_json()
 
     def save_json(self):
-        saved_info = {info['id']: info for info in self.labeled_info}
-        json.dump(saved_info, open(self.json_path, 'w',
-                                   encoding='utf-8'), indent=' ', ensure_ascii=False)
+        json.dump(self.labeled_info, open(self.json_path, 'w',
+                                          encoding='utf-8'), indent=' ', ensure_ascii=False)
 
     def load(self):
         if os.path.exists(self.path):
             info = pickle.load(open(self.path, 'rb'))
-            self.label_ids = info['need_label_ids']
+            self.need_label_ids = info['need_label_ids']
             self.current_idx = info['current_idx']
             self.start_idx = info['start_idx']
             self.end_idx = info['end_idx']
@@ -112,23 +128,19 @@ class Windows(QWidget):
         self.setMinimumHeight(500)
         self.setWindowTitle("患者级数据标注")
         self.center()
+        self.size = Size(3.6, 3.6)
 
         vhox = QVBoxLayout()
         hbox = QHBoxLayout()
         vhox_c_d = QVBoxLayout()
         vhox_c_d.addLayout(self.ui_c())
+        vhox_c_d.addLayout(self.ui_e())
         vhox_c_d.addLayout(self.ui_d())
-        hbox.addLayout(self.ui_e0())
         hbox.addLayout(vhox_c_d)
-        hbox.addLayout(self.ui_e())
-
         vhox.addLayout(self.ui_a())
         vhox.addLayout(self.ui_b())
         vhox.addLayout(hbox)
-        # vhox.addStretch(1)
-
         self.setLayout(vhox)
-
         self.input_name()
 
     def ui_a(self):
@@ -198,80 +210,37 @@ class Windows(QWidget):
         患者编号区域
         """
         self.qlabel_patient_id_label = QLabel("患者编号?-?, 当前患者编号:?", self)
-        # 人工智能预测
-        # self.qlabel_patient_id_label_ai = QLabel("人工智能模型预测概率:?", self)
-        # pe = QPalette()
-        # pe.setColor(QPalette.WindowText, Qt.red)
-        # self.qlabel_patient_id_label_ai.setPalette(pe)
-
-        # 创建下拉选项框
-        # self.cb = QComboBox()
-        # self.cb.currentIndexChanged.connect(self.update_image_plane)
-
         hbox = QHBoxLayout()
         hbox.addWidget(self.qlabel_patient_id_label)
-        # hbox.addWidget(self.qlabel_patient_id_label_ai)
-        # hbox.addWidget(self.cb)
-
         return hbox
 
     def ui_d(self):
         """
         pdf显示区域
         """
+        hBox = QHBoxLayout()
+        self.pdf_reader = PdfReader()
+        hBox.addWidget(self.pdf_reader)
+        return hBox
 
-        def prevpage():
-            if self.page_num <= 0:
-                self.page_num = self.doc.pageCount
-            self.page_num -= 1
-            # if self.page_num >= self.doc.pageCount:
-            #     self.page_num -= self.doc.pageCount
-            self.pageLineEdit.setText(
-                str(self.page_num) + "/" + str(self.doc.pageCount))
-            self.updatePdfView()
+    def page_pixmap(self, page):
+        label = QLabel()
+        # p = self.render_pdf_page(page, x = self.size.x, y = self.size.y)
+        p = self.render_pdf_page(page, 1, 1)
+        # p.scaled(200, 200)
+        label.setPixmap(QPixmap(p))
+        self.area.setWidget(label)
+        return label
 
-        def nextpage():
-            self.page_num += 1
-            if self.page_num >= self.doc.pageCount:
-                self.page_num -= self.doc.pageCount
-                self.nextpageBtn
-            self.pageLineEdit.setText(
-                str(self.page_num) + "/" + str(self.doc.pageCount))
-            self.updatePdfView()
-        vLayout = QVBoxLayout()
-        hLayout = QHBoxLayout()
-        self.nextpageBtn = QPushButton("下一页")
-        self.prevpageBtn = QPushButton("上一页")
-        self.pageLineEdit = QLineEdit()
-        self.pageLineEdit.setEnabled(False)
-        self.pageLineEdit.setMaximumWidth(80)
-        self.pageLineEdit.setAlignment(Qt.AlignCenter)
-        self.page_num = 0
-        self.page_max_num = 0
-        self.pageLineEdit.setText("0/0")
-        self.check_page_turn()
-        hLayout.addStretch(30)
-        hLayout.addWidget(self.prevpageBtn)
-        hLayout.addWidget(self.pageLineEdit)
-        hLayout.addWidget(self.nextpageBtn)
-        hLayout.addStretch(30)
-        self.scrollarea = QScrollArea(self)
-        self.label = QLabel("")
-        self.tocDict = {}
-        self.scrollarea.setWidget(self.label)
-        vLayout.addWidget(self.scrollarea)
-        vLayout.addLayout(hLayout)
-        self.nextpageBtn.clicked.connect(nextpage)
-        self.prevpageBtn.clicked.connect(prevpage)
-        return vLayout
-
-    def check_page_turn(self):
-        self.prevpageBtn.setEnabled(False)
-        self.nextpageBtn.setEnabled(False)
-        if self.page_num < self.page_max_num:
-            self.nextpageBtn.setEnabled(True)
-        if self.page_num > 0:
-            self.prevpageBtn.setEnabled(True)
+    def zoom_book(self, plus=True):
+        if plus:
+            self.size.x += 0.4
+            self.size.y += 0.4
+            self.set_page()
+        elif not plus:
+            self.size.x -= 0.4
+            self.size.y -= 0.4
+            self.set_page()
 
     def ui_e0(self):
         qlabel = QLabel('患者序列:')
@@ -290,31 +259,45 @@ class Windows(QWidget):
         """
         label_type = [line.strip('\n') for line in open(
             'data/app/type_anno.txt', 'r', encoding='utf-8')]
-        self.qlabel_class = QLabel("患者类别:", self)
+        self.qlabel_class = QLabel("标注类别:", self)
+        self.class2qlabelId = {}
         self.qradio_class = []
         for idx, item in enumerate(label_type):
-            self.qradio_class.append(QRadioButton('{}-{}'.format(idx, item)))
+            self.class2qlabelId[item] = idx
+            self.qradio_class.append(QRadioButton('{}-{}'.format(idx+1, item)))
 
-        vbox_1 = QVBoxLayout()
+        vbox_1 = QHBoxLayout()
         vbox_1.addWidget(self.qlabel_class)
-        for item in self.qradio_class:
+        for index, item in enumerate(self.qradio_class):
+            item.setShortcut(str(index+1))
             vbox_1.addWidget(item)
 
-        self.qbtn_next = QPushButton("下一位患者")
+        self.qbtn_pre = QPushButton("上一个")
+        self.qbtn_pre.setEnabled(False)
+        self.qbtn_pre.clicked.connect(self.pre)
+        self.qbtn_next = QPushButton("下一个")
         self.qbtn_next.setEnabled(False)
         self.qbtn_next.clicked.connect(self.next)
+        for seq in ["q", Qt.Key_Up]:
+            shorcut = QShortcut(seq, self.qbtn_pre)
+            shorcut.activated.connect(self.qbtn_pre.animateClick)
+        for seq in ["e", Qt.Key_Down]:
+            shorcut = QShortcut(seq, self.qbtn_next)
+            shorcut.activated.connect(self.qbtn_next.animateClick)
 
-        vbox = QVBoxLayout()
+        vbox = QHBoxLayout()
         vbox.addLayout(vbox_1)
-        vbox.addWidget(self.qbtn_next)
         vbox.addStretch(1)
+        vbox.addWidget(self.qbtn_pre, 0, Qt.AlignRight)
+        vbox.addWidget(self.qbtn_next, 0, Qt.AlignRight)
+
         return vbox
 
     def input_name(self):
         value, ok = QInputDialog.getText(
             self, '输入', '请输入您的姓名', QLineEdit.Normal, "")
         if not ok:
-            exit(0)
+            sys.exit()
         self.name = value
         self.usr_dir = os.path.join('data/usr', self.name)
         if not os.path.isdir(self.usr_dir):
@@ -332,7 +315,6 @@ class Windows(QWidget):
                 QMessageBox.critical(self, "错误", "请选择数据路径: (当前目录下的data文件夹)",
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
                 return
-
             # 检查标注类型
             data_type_list = [btn.isChecked()
                               for btn in self.qradio_data_type]
@@ -354,76 +336,117 @@ class Windows(QWidget):
                                  for name in os.listdir(os.path.join(self.data_root, data_type))}
             self.task = Task(self.usr_dir, pkl_path,
                              data_type, None, self.name)
-            if self.task.is_finished:
-                QMessageBox.critical(self, "错误", "【{}】已经标注完毕，请不重复标注".format(self.qradio_data_type[data_type_idx].text()),
-                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
-                return
             if not self.task.need_label_ids:
                 self.task.need_label_ids = list(
                     sorted(self.pdfs_id2path.keys()))
+                self.task.labeled_info = [{
+                    'id': id,
+                    "pdf_name": self.pdfs_id2name[id],
+                    'is_labeled':0,
+                    'label': "",
+                    'labeled_time': "",
+                }for id in self.task.need_label_ids]
                 self.task.start_idx = 1
                 self.task.end_idx = len(self.task.need_label_ids)
-
         if self.label_flag == self.UNLABELING:
             self.label_flag = self.LABELING
             self.qbtn_start_label.setText("停止标注")
             for btn in self.qradio_data_type:
                 btn.setEnabled(False)
             self.qbtn_next.setEnabled(True)
-            self.start()
+            self.set_test()
+            self.check_pre_next()
         else:
             self.label_flag = self.UNLABELING
             self.qbtn_start_label.setText("开始标注")
+            for btn in self.qradio_data_type:
+                btn.setEnabled(True)
+            self.qbtn_pre.setEnabled(False)
             self.qbtn_next.setEnabled(False)
             self.end()
 
-    def start(self):
+    def check_pre_next(self):
+        if self.task.current_idx > 1:
+            self.qbtn_pre.setEnabled(True)
+        else:
+            self.qbtn_pre.setEnabled(False)
+        if self.task.current_idx < self.task.end_idx:
+            self.qbtn_next.setEnabled(True)
+            self.qbtn_next.setText("下一个")
+        else:
+            self.qbtn_next.setEnabled(True)
+            self.qbtn_next.setText("完成标注")
+
+    def pre(self):
+        # 上一个
         self.task.current_idx -= 1
-        self.next()
+        self.set_test()
+        self.check_pre_next()
 
     def next(self):
+        # 下一个
         label_type_list = [btn.isChecked()
                            for btn in self.qradio_class]
+        if np.sum(label_type_list) == 0:
+            QMessageBox.critical(self, "错误", "请选择一个标注类型",
+                                 QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
+            return
+        self.save_current_test()
+        if self.task.current_idx == self.task.end_idx:
+            QMessageBox.information(self, "信息", "患者{}-{}标注完毕, 请收集保存目录下生成的【{}】".format(
+                self.task.start_idx, self.task.current_idx, self.task.json_path),
+                QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
+            self.qbtn_next.setEnabled(False)
+            return
+        self.task.current_idx += 1
+        self.set_test()
+        self.qbtn_pre.setEnabled(True)
+        self.check_pre_next()
+
+    def set_test(self):
+        # 放置一个测试
         if self.my_timer_thread == None:
             self.my_timer_thread = MyTimer(self.qlabel_timer_obj)
             self.my_timer_thread.start()
         else:
-            # 检查是否选择标注
-            if np.sum(label_type_list) == 0:
-                QMessageBox.critical(self, "错误", "请选择一个标注类型",
-                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
-                return
-            # 收集上一个标注的信息
-            if self.get_info() > 0:
-                return
             self.my_timer_thread.terminate()
             self.my_timer_thread.wait()
             self.my_timer_thread = MyTimer(self.qlabel_timer_obj)
             self.my_timer_thread.start()
-        self.task.current_idx += 1
-        if self.task.current_idx > self.task.end_idx:
-            # 最后一个标注，结束
-            self.task.current_idx -= 1
-            self.task.save()
-            self.end(is_last=True)
-            return
-        self.update()
-        self.task.save()
+        self.qlabel_patient_id_label.setText(
+            'pdf序号:{}-{}, 当前pdf序号:{}, 当前pdf名称{}'.format(self.task.start_idx, self.task.end_idx, self.task.current_idx, self.pdfs_id2name[self.task.current_idx]))
+        pdf_path = self.pdfs_id2path[self.task.current_idx]
+        # pdf
+        self.pdf_reader.set_pdf(pdf_path)
+        # 标注
+        if self.task.get_current_label() is None:
+            for item in self.qradio_class:
+                item.setAutoExclusive(False)
+                item.setChecked(False)
+                item.setAutoExclusive(True)
+        else:
+            self.qradio_class[self.class2qlabelId[self.task.get_current_label()]].setChecked(
+                True)
 
-    def end(self, is_last=False):
+    def save_current_test(self):
+        radio_btn_isCheck = [btn.isChecked() for btn in self.qradio_class]
+        label = self.qradio_class[np.argmax(
+            radio_btn_isCheck)].text().split('-')[-1]
+        labeled_time = self.my_timer_thread.all_time
+        self.task.update_current_label(label, labeled_time)
+        return 0
+
+    def end(self):
         if self.label_flag == self.LABELING:
             self.qbtn_start_label.setText("开始标注")
             for btn in self.qradio_data_type:
                 btn.setEnabled(True)
+            self.qbtn_pre.setEnabled(False)
             self.qbtn_next.setEnabled(False)
             self.label_flag = self.UNLABELING
-
-        if self.my_timer_thread:
-            self.my_timer_thread.terminate()
-            self.my_timer_thread.wait()
-            self.my_timer_thread = None
-
-        if is_last:
+        label_type_list = [btn.isChecked() for btn in self.qradio_class]
+        if np.sum(label_type_list) != 0:
+            self.save_current_test()
             QMessageBox.information(self, "信息", "患者{}-{}标注完毕, 请收集保存目录下生成的【{}】".format(
                 self.task.start_idx, self.task.current_idx, self.task.json_path),
                 QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
@@ -431,51 +454,10 @@ class Windows(QWidget):
             QMessageBox.information(self, "信息", "患者{}-{}标注完毕, 请收集保存目录下生成的【{}】".format(
                 self.task.start_idx, self.task.current_idx - 1, self.task.json_path),
                 QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
-
-    def get_info(self):
-        radio_btn_isCheck = [btn.isChecked() for btn in self.qradio_class]
-        label = self.qradio_class[np.argmax(radio_btn_isCheck)].text().split(
-            '-')[-1]
-        pdf_id = self.task.need_label_ids[self.task.current_idx - 1]
-        patient_labeled_time = self.my_timer_thread.all_time
-        self.task.labeled_info.append({
-            'id': pdf_id,
-            "pdf_name": self.pdfs_id2name[self.task.current_idx],
-            'label': label,
-            'labeled_time': patient_labeled_time,
-            'time': time.time()
-        })
-        self.task.save()
-        return 0
-
-    def update(self):
-        self.qlabel_patient_id_label.setText(
-            'pdf序号:{}-{}, 当前pdf序号:{}, 当前pdf名称{}'.format(self.task.start_idx, self.task.end_idx, self.task.current_idx, self.pdfs_id2name[self.task.current_idx]))
-        self.update_pdf()
-        for btn in self.qradio_class:
-            if btn.isChecked():
-                btn.setAutoExclusive(False)
-                btn.setChecked(False)
-                btn.setAutoExclusive(True)
-
-    def update_pdf(self):
-        self.scrollarea.verticalScrollBar().setValue(0)
-        pdf_path = self.pdfs_id2path[self.task.current_idx]
-        self.doc = fitz.open(pdf_path)
-        self.page_max_num = self.doc.pageCount - 1
-        self.pageLineEdit.setText(
-            str(self.page_num + 1) + "/" + str(self.doc.pageCount))
-        self.check_page_turn()
-        trans_a = 200
-        trans_b = 200
-        trans = fitz.Matrix(trans_a / 100, trans_b / 100).prerotate(0)
-        pix = self.doc[self.page_num].get_pixmap(matrix=trans)
-        fmt = QImage.Format_RGBA8888 if pix.alpha else QImage.Format_RGB888
-        pageImage = QImage(pix.samples, pix.width, pix.height, pix.stride, fmt)
-        pixmap = QPixmap()
-        pixmap.convertFromImage(pageImage)
-        self.label.setPixmap(QPixmap(pixmap))
-        self.label.resize(pixmap.size())
+        if self.my_timer_thread:
+            self.my_timer_thread.terminate()
+            self.my_timer_thread.wait()
+            self.my_timer_thread = None
 
 
 if __name__ == "__main__":

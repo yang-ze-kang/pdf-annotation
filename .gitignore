@@ -1,2 +1,8 @@
+__pycache__
+*.pyc
 data/chongqing-onlyimage-pdfs
 pdf标注.zip
+pdf标注
+build/mainwindow
+dist
+z.ipynb

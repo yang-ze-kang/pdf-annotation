@@ -1,3 +1,5 @@
-AMD患者
-非AMD患者
+左眼AMD
+右眼AMD
+双眼AMD
+非AMD
 不确定
